@@ -1,11 +1,11 @@
-import Content from "../layout/Content";
-import Sidebar from "../layout/Sidebar";
+import ContentLayout from "../layout/ContentLayout";
+import SidebarLayout from "../layout/SidebarLayout";
 
 const Dashboard = () => {
     return (
         <div className="flex h-screen">
-            <Sidebar />
-            <Content />
+            <SidebarLayout />
+            <ContentLayout />
         </div>
     );
 };
