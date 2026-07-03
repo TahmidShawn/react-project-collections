@@ -1,22 +1,9 @@
-import { TaskContext } from "../context/TaskContext";
+import { useContext } from "react";
 import TaskCard from "../components/ui/TaskCard";
-import { useContext, useEffect } from "react";
+import { TaskContext } from "../context/TaskContext";
 
 const MyTask = () => {
-    const { state, dispatch } = useContext(TaskContext);
-
-    useEffect(() => {
-        async function loadTasks() {
-            const response = await fetch("/tasks.json");
-            const data = await response.json();
-
-            dispatch({
-                type: "LOAD_TASKS",
-                payload: data,
-            });
-        }
-        loadTasks();
-    }, []);
+    const { state } = useContext(TaskContext);
 
     return (
         <div>

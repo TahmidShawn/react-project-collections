@@ -34,6 +34,11 @@ export function taskReducer(state, action) {
                         : task,
                 ),
             };
+        case "SET_SEARCH":
+            return {
+                ...state,
+                searchText: action.payload,
+            };
         default:
             return state;
     }
