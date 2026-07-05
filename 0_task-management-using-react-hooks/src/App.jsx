@@ -3,9 +3,11 @@ import { Link } from "react-router";
 import { TaskContext } from "./context/TaskContext";
 
 const App = () => {
-    const { dispatch } = useContext(TaskContext);
+    const { state, dispatch } = useContext(TaskContext);
 
     useEffect(() => {
+        if (state.tasks.length > 0) return;
+
         async function loadTasks() {
             const response = await fetch("/tasks.json");
             const data = await response.json();

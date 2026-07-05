@@ -12,4 +12,3 @@ const SearchBar = () => {
 
 export default SearchBar
 
-const {state,dispatch} = useContext(TaskContext)
